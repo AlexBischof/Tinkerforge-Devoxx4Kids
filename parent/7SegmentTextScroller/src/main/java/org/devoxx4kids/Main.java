@@ -1,4 +1,4 @@
-package org.devoxx4kids;
+package org.javaland4kids;
 
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;

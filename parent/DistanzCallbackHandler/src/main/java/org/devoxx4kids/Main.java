@@ -1,4 +1,4 @@
-package org.devoxx4kids;
+package org.javaland4kids;
 
 import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.IPConnection;
