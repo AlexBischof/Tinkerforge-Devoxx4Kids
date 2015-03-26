@@ -4,6 +4,8 @@ import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.IPConnection;
 
+import java.util.ResourceBundle;
+
 public class Main {
 
     private static final String HOST = "localhost";
@@ -26,7 +28,8 @@ public class Main {
         dir.setDistanceCallbackThreshold('<', (short) 200, (short) 200);
         ps.calibrate();
 
-        System.out.println("Einparkpieper gestartet. Verändere den Abstand vom Distanzsensor.");
+      ResourceBundle language = ResourceBundle.getBundle("language");
+      System.out.println(language.getString("information"));
 
         //Jetzt will ich unendlich lange pieeeeepen können
         while (true) {

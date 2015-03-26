@@ -3,6 +3,8 @@ package org.javaland4kids;
 import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.IPConnection;
 
+import java.util.ResourceBundle;
+
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -24,8 +26,9 @@ public class Main {
         ps.calibrate();
 
         try {
-            while (true) {
-                System.out.print("Gib einen Text zum Morsen ein: ");
+          ResourceBundle language = ResourceBundle.getBundle("language");
+          while (true) {
+                System.out.print(language.getString("information"));
                 String stringToMorse = System.console().readLine();
 
                 String morseCode = "";
