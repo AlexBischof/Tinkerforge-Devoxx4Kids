@@ -10,8 +10,6 @@ public class Main {
 
   private static final String HOST = "localhost";
   private static final int PORT = 4223;
-  private static final String UID_Distance = "nTP";
-  private static final String UID_Speaker = "mtA";
 
   public static void main(String args[]) throws Exception {
 	BrickletReader brickletReader = new BrickletReader();

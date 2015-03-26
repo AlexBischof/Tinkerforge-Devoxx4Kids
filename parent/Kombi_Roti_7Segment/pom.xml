@@ -14,12 +14,4 @@
     <modules>
         <module>../Piepen</module>
     </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>de.bischinger.tinkerforge.devoxx4kids</groupId>
-            <artifactId>BrickletReader</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

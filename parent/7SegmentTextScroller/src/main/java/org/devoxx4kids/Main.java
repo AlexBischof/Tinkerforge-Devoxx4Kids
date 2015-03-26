@@ -13,10 +13,6 @@ public class Main {
     private static final String HOST = "localhost";
     private static final int PORT = 4223;
 
-    private static final byte[] ZAHLEN = {0x3f, 0x06, 0x5b, 0x4f,
-            0x66, 0x6d, 0x7d, 0x07,
-            0x7f, 0x6f}; // 0~9,
-
     public static void main(String args[]) throws Exception {
 
         //Find UID
@@ -35,7 +31,6 @@ public class Main {
             System.out.print(ResourceBundle.getBundle("language").getString("information"));
             String textToScroll = System.console().readLine();
 
-            short[] aktuellerText = new short[4];
             if (textToScroll.length() < 5) {
 
                 //Konvertiere Text zu Bytes

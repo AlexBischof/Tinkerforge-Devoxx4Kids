@@ -38,8 +38,6 @@ public class Main {
 	rotierSensor.addPositionListener(new BrickletRotaryPoti.PositionListener() {
 	  @Override
 	  public void position(short position) {
-		int ersteZahlIndex = position < 0 ? 64 : 0;
-
 		position = (short) Math.abs(position);
 
 		//Ermitteln von den Stellen
