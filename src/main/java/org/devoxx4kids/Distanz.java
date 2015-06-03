@@ -2,8 +2,6 @@ package org.devoxx4kids;
 
 import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.IPConnection;
-import org.devoxx4kids.util.Bricklet;
-import org.devoxx4kids.util.BrickletReader;
 
 import java.util.ResourceBundle;
 

@@ -2,8 +2,6 @@ package org.devoxx4kids;
 
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
-import org.devoxx4kids.util.Bricklet;
-import org.devoxx4kids.util.BrickletReader;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

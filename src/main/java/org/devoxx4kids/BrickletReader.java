@@ -1,10 +1,11 @@
-package org.devoxx4kids.util;
+package org.devoxx4kids;
 
 import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.BrickletRotaryPoti;
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
-import org.devoxx4kids.util.Bricklet;
+
+import org.devoxx4kids.Bricklet;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package org.devoxx4kids.util;
+package org.devoxx4kids;
 
 /**
  * Created by alexanderbischof on 23.09.14.
