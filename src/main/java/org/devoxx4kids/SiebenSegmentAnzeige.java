@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 /**
  * Created by alexanderbischof on 18.09.14.
  */
-public class _7SegmentAnzeige {
+public class SiebenSegmentAnzeige {
 
   private static final String HOST = "localhost";
   private static final int PORT = 4223;

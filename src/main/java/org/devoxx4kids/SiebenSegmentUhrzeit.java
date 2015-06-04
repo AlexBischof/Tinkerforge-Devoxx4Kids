@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by alexanderbischof on 18.09.14.
  */
-public class _7SegmentUhrzeit {
+public class SiebenSegmentUhrzeit {
 
     private static final String HOST = "localhost";
     private static final int PORT = 4223;

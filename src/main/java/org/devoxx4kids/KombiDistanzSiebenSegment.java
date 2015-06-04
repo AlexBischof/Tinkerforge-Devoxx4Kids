@@ -1,15 +1,13 @@
 package org.devoxx4kids;
 
-import com.tinkerforge.BrickletRotaryPoti;
-import com.tinkerforge.BrickletSegmentDisplay4x7;
-import com.tinkerforge.IPConnection;
+import com.tinkerforge.*;
 
 import java.util.ResourceBundle;
 
 /**
  * Created by alexanderbischof on 18.09.14.
  */
-public class KombiRoti7Segment {
+public class KombiDistanzSiebenSegment {
 
   private static final String HOST = "localhost";
   private static final int PORT = 4223;
@@ -19,12 +17,12 @@ public class KombiRoti7Segment {
 	//Find UID
 	BrickletReader brickletReader = new BrickletReader();
 	brickletReader.readBricklets(HOST, PORT);
-	Bricklet rotiBricklet = brickletReader.getBrickletByDeviceId(BrickletRotaryPoti.DEVICE_IDENTIFIER);
+	Bricklet distanceBricklet = brickletReader.getBrickletByDeviceId(BrickletDistanceIR.DEVICE_IDENTIFIER);
 	Bricklet segmentBricklet = brickletReader.getBrickletByDeviceId(BrickletSegmentDisplay4x7.DEVICE_IDENTIFIER);
 
 	IPConnection ipcon = new IPConnection();
 
-	BrickletRotaryPoti rotierSensor = new BrickletRotaryPoti(rotiBricklet.getUid(), ipcon); // Create device object
+	BrickletDistanceIR dir = new BrickletDistanceIR(distanceBricklet.getUid(), ipcon); // Create device object
 
 	final BrickletSegmentDisplay4x7 segmentDisplay4x7 = new BrickletSegmentDisplay4x7(segmentBricklet.getUid(),
 	                                                                                  ipcon); // Create device object
@@ -33,19 +31,18 @@ public class KombiRoti7Segment {
 	ResourceBundle language = ResourceBundle.getBundle("language");
 	System.out.println(language.getString("information"));
 
-	//CallbackHandler für Rotiersensor einrichten
-	rotierSensor.setPositionCallbackPeriod(50);
-	rotierSensor.addPositionListener(new BrickletRotaryPoti.PositionListener() {
+	//CallbackHandler für Distanzsensor einrichten
+	dir.setDistanceCallbackPeriod(1000);
+	dir.addDistanceListener(new BrickletDistanceIR.DistanceListener() {
 	  @Override
-	  public void position(short position) {
-		position = (short) Math.abs(position);
-
+	  public void distance(int distance) {
 		//Ermitteln von den Stellen
-		int zweiteZahlIndex = (position / 100 % 10);
-		int dritteZahlIndex = (position / 10 % 10);
-		int vierteZahlIndex = (position % 10);
+		int ersteZahlIndex = 0;
+		int zweiteZahlIndex = (distance / 100 % 10);
+		int dritteZahlIndex = (distance / 10 % 10);
+		int vierteZahlIndex = (distance % 10);
 
-		short[] segments = { position,
+		short[] segments = { getByteForCharacter(ersteZahlIndex),
 				getByteForCharacter(zweiteZahlIndex),
 				getByteForCharacter(dritteZahlIndex),
 				getByteForCharacter(vierteZahlIndex)
