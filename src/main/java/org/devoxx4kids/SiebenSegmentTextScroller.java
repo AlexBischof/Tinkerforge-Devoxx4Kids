@@ -3,8 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -28,7 +26,7 @@ public class SiebenSegmentTextScroller {
         while (true) {
 
             //Eingabe von Text
-            System.out.print(ResourceBundle.getBundle("language").getString("information"));
+            System.out.print("Gib einen Text zum Srcollen auf der 7Segmentanzeige ein:");
             String textToScroll = System.console().readLine();
 
             if (textToScroll.length() < 5) {

@@ -4,8 +4,6 @@ import com.tinkerforge.BrickletRotaryPoti;
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -30,8 +28,7 @@ public class KombiRotiSiebenSegment {
 	                                                                                  ipcon); // Create device object
 	ipcon.connect(HOST, PORT);
 
-	ResourceBundle language = ResourceBundle.getBundle("language");
-	System.out.println(language.getString("information"));
+	System.out.println("Drehe am Drehknopf und lies den Wert auf der 7-Segmentanzeige ab.");
 
 	//CallbackHandler für Rotiersensor einrichten
 	rotierSensor.setPositionCallbackPeriod(50);
@@ -58,7 +55,7 @@ public class KombiRotiSiebenSegment {
 	  }
 	});
 
-	System.out.println(language.getString("exit"));
+	System.out.println("Beende das Programm mit Enter.");
 	System.in.read();
 
 	ipcon.disconnect();

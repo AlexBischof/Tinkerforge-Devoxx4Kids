@@ -5,8 +5,6 @@ import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.BrickletRotaryPoti;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 public class SesamOeffneDich {
 
     //Einstellungen für Distanzsensor
@@ -23,8 +21,6 @@ public class SesamOeffneDich {
     public static void main(String args[]) throws Exception {
         // Verbinde mich zur Schaltung
 
-        ResourceBundle language = ResourceBundle.getBundle("language");
-
         BrickletReader brickletReader = new BrickletReader();
         brickletReader.readBricklets(HOST, PORT);
         Bricklet distanceBricklet = brickletReader.getBrickletByDeviceId(BrickletDistanceIR.DEVICE_IDENTIFIER);
@@ -38,9 +34,9 @@ public class SesamOeffneDich {
         BrickletRotaryPoti lp = new BrickletRotaryPoti(potiBricklet.getUid(), ipcon);
         ipcon.connect(HOST, PORT);
 
-        System.out.println(language.getString("information"));
-        System.out.println(String.format(language.getString("information2"), MIN_DISTANCE / 10, MAX_DISTANCE / 10));
-        System.out.println(String.format(language.getString("information3"), MIN_ROTIER, MAX_ROTIER));
+        System.out.println("Versuche gleichzeitig folgende beiden Sensormesswerte zu halten.");
+        System.out.println(String.format("Den Distanzsensor in einer Distanz zwischen %d und %d cm.", MIN_DISTANCE / 10, MAX_DISTANCE / 10));
+        System.out.println(String.format("Den Drehknopf zwischen %d und %d Grad.", MIN_ROTIER, MAX_ROTIER));
 
         // Einstellen einer unteren Grenze, wenn ich näher als 20cm bin, soll er
         // trotzdem immer 20cm ausgeben

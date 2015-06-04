@@ -3,8 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -26,9 +24,8 @@ public class Morsen {
 	ps.calibrate();
 
 	try {
-	  ResourceBundle language = ResourceBundle.getBundle("language");
 	  while (true) {
-		System.out.print(language.getString("information"));
+		System.out.print("Gib einen Text zum Morsen ein: ");
 		String stringToMorse = System.console().readLine();
 
 		String morseCode = "";

@@ -4,8 +4,6 @@ import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.BrickletPiezoSpeaker;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 public class HoerbareDistanz {
 
   private static final String HOST = "localhost";
@@ -28,8 +26,7 @@ public class HoerbareDistanz {
 	dir.setDistanceCallbackThreshold('<', (short) 200, (short) 200);
 	ps.calibrate();
 
-	ResourceBundle language = ResourceBundle.getBundle("language");
-	System.out.println(language.getString("information"));
+	System.out.println("Hörbare Distanz gestartet. Verändere den Abstand am Distanzsensor.");
 
 	//Jetzt soll meine Orgel unendlich lange spielen
 	while (true) {

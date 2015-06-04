@@ -3,8 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -14,8 +12,6 @@ public class DistanzCallbackHandler {
     private static final int PORT = 4223;
 
     public static void main(String args[]) throws Exception {
-
-      final ResourceBundle language = ResourceBundle.getBundle("language");
 
       //Find UID
         BrickletReader brickletReader = new BrickletReader();
@@ -30,11 +26,11 @@ public class DistanzCallbackHandler {
         dir.addDistanceListener(new BrickletDistanceIR.DistanceListener() {
             @Override
             public void distance(int distance) {
-                System.out.println(language.getString("newValue")+ ": " + (distance / 10) + " cm");
+                System.out.println("neuer Wert: " + (distance / 10) + " cm");
             }
         });
 
-        System.out.println(language.getString("exit"));
+        System.out.println("Beende das Programm mit Enter.");
         System.in.read();
 
         ipcon.disconnect();

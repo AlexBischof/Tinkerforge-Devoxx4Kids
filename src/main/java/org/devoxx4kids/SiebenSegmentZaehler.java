@@ -3,7 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
 
 /**
  * Created by alexanderbischof on 18.09.14.
@@ -25,8 +24,7 @@ public class SiebenSegmentZaehler {
         ipcon.connect(HOST, PORT);
 
         try {
-          final ResourceBundle language = ResourceBundle.getBundle("language");
-          System.out.print(language.getString("information"));
+          System.out.print("Bis wohin soll gezählt werden:");
             String counter_end = System.console().readLine();
 
             //Zählt von 0 bis counter durch erhöhen von 1 und 1 Sekunde pause
@@ -35,11 +33,11 @@ public class SiebenSegmentZaehler {
             sd4x7.addCounterFinishedListener(new BrickletSegmentDisplay4x7.CounterFinishedListener() {
                 @Override
                 public void counterFinished() {
-                    System.out.println(language.getString("ready"));
+                    System.out.println("Fertig gezählt");
                 }
             });
 
-            System.out.println(language.getString("exit"));
+            System.out.println("Beende das Programm mit Enter.");
             System.in.read();
         } finally {
             ipcon.disconnect();

@@ -2,8 +2,6 @@ package org.devoxx4kids;
 
 import com.tinkerforge.*;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -28,8 +26,7 @@ public class KombiDistanzSiebenSegment {
 	                                                                                  ipcon); // Create device object
 	ipcon.connect(HOST, PORT);
 
-	ResourceBundle language = ResourceBundle.getBundle("language");
-	System.out.println(language.getString("information"));
+	System.out.println("Verändere die Distanz und lies den Wert an der 7-Segmentanzeige ab.");
 
 	//CallbackHandler für Distanzsensor einrichten
 	dir.setDistanceCallbackPeriod(1000);
@@ -55,7 +52,7 @@ public class KombiDistanzSiebenSegment {
 	  }
 	});
 
-	System.out.println(language.getString("exit"));
+	System.out.println("Beende das Programm mit Enter.");
 	System.in.read();
 
 	ipcon.disconnect();

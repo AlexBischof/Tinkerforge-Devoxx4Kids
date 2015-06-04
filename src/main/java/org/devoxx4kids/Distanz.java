@@ -3,8 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletDistanceIR;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -29,7 +27,7 @@ public class Distanz {
 		// Get current distance (unit is mm)
 		int distance = dir.getDistance();
 
-		System.out.println(ResourceBundle.getBundle("language").getString("distance") + ": " + distance / 10.0 + " cm");
+		System.out.println("Distanz: " + distance / 10.0 + " cm");
 		Thread.sleep(1000l);
 	  }
 	} finally {

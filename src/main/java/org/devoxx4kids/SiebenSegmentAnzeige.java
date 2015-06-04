@@ -3,8 +3,6 @@ package org.devoxx4kids;
 import com.tinkerforge.BrickletSegmentDisplay4x7;
 import com.tinkerforge.IPConnection;
 
-import java.util.ResourceBundle;
-
 /**
  * Created by alexanderbischof on 18.09.14.
  */
@@ -34,7 +32,7 @@ public class SiebenSegmentAnzeige {
 	};
 	sd4x7.setSegments(segments, (short) 7, false);
 
-	System.out.println(ResourceBundle.getBundle("language").getString("exit"));
+	System.out.println("Beende das Programm mit Enter.");
 	System.in.read();
 
 	ipcon.disconnect();
